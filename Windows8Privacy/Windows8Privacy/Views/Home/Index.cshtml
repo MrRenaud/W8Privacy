@@ -1,0 +1,55 @@
+﻿@model Windows8Privacy.Controllers.Language
+
+@{
+    ViewBag.Title = "Windows 8 Privacy Generator";
+    Layout = "~/Views/Shared/_Foundation.cshtml";
+}
+
+@{
+    Html.RenderPartial("Navigation", (Windows8Privacy.Controllers.Language)Model);
+}
+
+<div class="row">
+    <div class="twelve columns">
+        <h2>@Resources.Welcome1</h2>
+        <p>@Resources.Welcome2</p>
+        <p>@Resources.Welcome3<span><a href="http://www.windowsazure.com" target="_blank">Windows Azure</a> !</span></p>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="twelve columns">
+        <a class="button" href="#" data-reveal-id="myModal">@Resources.Call1</a>
+    </div>
+</div>
+
+<div id="myModal" class="reveal-modal medium">
+    <h2>@Resources.Modal1a</h2>
+    <p class="lead">@Resources.Modal1b</p>
+    <p>@Resources.Modal1c <em>@Resources.Modal1d</em></p>
+    <input type="text" id="dev-name" placeholder="" />
+    <p>@Resources.Modal1e</p>
+    <input type="text" id="mail" />
+    <a class="close-reveal-modal button" href="#" data-reveal-id="myModal2">@Resources.Call2</a>
+</div>
+
+<div id="myModal2" class="reveal-modal medium">
+    <h2>@Resources.Modal2a</h2>
+    <p class="lead">@Resources.Modal2b</p>
+    <p>@Resources.Modal2c</p>
+    <input type="text" id="app-name" />
+    <a class="close-reveal-modal button" id="submit">@Resources.Call3</a>
+</div>
+
+@section scripts{
+
+    <script>
+        $('#submit').click(function () {
+            window.document.location = '/privacy?dev=' + encodeURIComponent($('#dev-name').val())
+                                             + '&app=' + encodeURIComponent($('#app-name').val())
+                                             + ($('#mail').val() ? '&mail=' + btoa(unescape(encodeURIComponent($('#mail').val()))) : '')
+                                             + '&lng=@Model.ToString()';
+        });
+    </script>
+}

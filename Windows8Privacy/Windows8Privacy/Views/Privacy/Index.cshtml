@@ -1,0 +1,42 @@
+﻿@model Windows8Privacy.Models.PrivacyModel
+
+@{
+    ViewBag.Title = Model.App + " - Privacy";
+    Layout = "~/Views/Shared/_Foundation.cshtml";
+}
+
+@{
+    Html.RenderPartial("Navigation", Model.Lng);
+}
+
+<div class="row">
+    <div class="twelve columns">
+        <h1>@Resources.PrivacyTitle <span style="color: #2ba6cb;">@Model.App</span></h1>
+
+        <h2 class="subheader">@Resources.PrivacyQuestion1</h2>
+        <h3><small><span style="color: #2ba6cb;">@Model.App</span> @Resources.PrivacyAnswer1</small></h3>
+        <ul class="circle">
+            <li>@Resources.PrivacyBullet1a</li>
+            <li>@Resources.PrivacyBullet1b</li>
+            <li>@Resources.PrivacyBullet1c</li>
+        </ul>
+
+        <h2 class="subheader">@Resources.PrivacyQuestion2</h2>
+        <h3><small>@Resources.PrivacyAnswer2</small></h3>
+        <p>@Model.Dev</p>
+        <p>@Model.Mail</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="ten columns centered">
+        <div class="row">
+            <div class="six columns">
+                <img src="~/Content/images/WinAzure_Web.jpg" alt="Windows Azure" />
+            </div>
+            <div class="six columns">
+                <img src="~/Content/images/micbelgique.jpg" alt="Microsoft Innovation Center Belgique" />
+            </div>
+        </div>
+    </div>
+</div>

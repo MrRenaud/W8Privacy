@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Foundation.cshtml";
+}
+
+@{
+    Html.RenderPartial("Navigation", (Windows8Privacy.Controllers.Language)Model);
+}
+
+<div class="row">
+    <div class="twelve columns">
+        <h2>@Resources.AboutTitle</h2>
+        <h3>@Resources.AboutText <a href="http://www.mic-belgique.be">Microsoft Innovation Center Belgique</a></h3>
+    </div>
+</div>
+<div class="row">
+    <div class="ten columns centered">
+        <img src="~/Content/images/micbelgique.jpg" alt="Microsoft Innovation Center Belgique" />
+    </div>
+</div>

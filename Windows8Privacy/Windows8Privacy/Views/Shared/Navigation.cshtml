@@ -1,0 +1,50 @@
+﻿<div class="contain-to-grid">
+    <div class="row">
+        <div class="twelve columns">
+            <nav class="top-bar">
+                <ul>
+                    <!-- Title Area -->
+                    <li class="name">
+                        <h1>
+                            @Html.ActionLink("Windows 8 Privacy", "Index", "Home")
+                        </h1>
+                    </li>
+                    <li class="toggle-topbar"><a href="#"></a></li>
+                </ul>
+
+                <section>
+                    <ul class="left">
+                        <li>
+                            @Html.ActionLink("About", "About", "Home")
+                        </li>
+                    </ul>
+                    <ul class="right">
+                        <li class="divider show-for-medium-and-up"></li>
+                        <li class="has-dropdown">
+                            <a href="#">@Resources.Language</a>
+                            <ul class="dropdown">
+                                @{
+                                    
+                                    var url = this.Request.Url.OriginalString;
+                                    var index = url.IndexOf("lng=");
+                                    if (index > 0)
+                                    {
+                                        // remove the ? or & symbol
+                                        url = url.Remove(index - 1, 7);
+                                    }
+                                    if (url.IndexOf('?') < 0)
+                                    {
+                                        url += '?';
+                                    }
+                                }
+                                <li class="@(Model == Windows8Privacy.Controllers.Language.En ? "active" : "")"><a href="@String.Format(url + "&lng=en")">English</a></li>
+                                <li class="@(Model == Windows8Privacy.Controllers.Language.Fr ? "active" : "")"><a href="@String.Format(url + "&lng=fr")">Français</a></li>
+                                <li class="@(Model == Windows8Privacy.Controllers.Language.Nl ? "active" : "")"><a href="@String.Format(url + "&lng=nl")">Dutch</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </div>
+</div>
