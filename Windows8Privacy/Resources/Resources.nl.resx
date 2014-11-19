@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutText" xml:space="preserve">
-    <value>Powered by the</value>
+    <value>Hi, I'm Renaud, a Windows Development MVP from Belgium. I built this tool to help developers get their apps in the store easily. If you want to get in touch, contact me on :</value>
   </data>
   <data name="AboutTitle" xml:space="preserve">
     <value>About</value>

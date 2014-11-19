@@ -145,9 +145,7 @@
     <Content Include="Content\images\foundation\orbit\right-arrow.png" />
     <Content Include="Content\images\foundation\orbit\rotator-black.png" />
     <Content Include="Content\images\foundation\orbit\timer-black.png" />
-    <Content Include="Content\images\micbelgique.jpg" />
-    <Content Include="Content\images\PoweredByMIC.jpg" />
-    <Content Include="Content\images\WinAzure_Web.jpg" />
+    <Content Include="Content\images\microsoft-azure.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -205,7 +203,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Foundation_readme.txt" />
     <Content Include="Global.asax" />
-    <None Include="Content\Site.css.exclude" />
     <None Include="Properties\PublishProfiles\w8privacy - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\w8privacy - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />

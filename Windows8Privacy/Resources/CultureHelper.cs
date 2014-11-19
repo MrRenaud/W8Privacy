@@ -19,8 +19,6 @@ namespace Resources
             "nl"    
         };
 
-
-
         /// <summary>
         /// Returns a valid culture name based on "name" parameter. If "name" is not valid, it returns the default culture "en-US"
         /// </summary>
@@ -32,15 +30,12 @@ namespace Resources
                 return GetDefaultCulture(); // return Default culture
 
             // make sure it is a valid culture first
-            if (_validCultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() == 0)
+            if (_validCultures.Count(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)) == 0)
                 return GetDefaultCulture(); // return Default culture if it is invalid
 
-
             // if it is implemented, accept it
-            if (_cultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() > 0)
+            if (_cultures.Count(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)) > 0)
                 return name; // accept it
-
-
 
             // Find a close match. For example, if you have "en-US" defined and the user requests "en-GB", 
             // the function will return closes match that is "en-US" because at least the language is the same (ie English)  
@@ -48,8 +43,6 @@ namespace Resources
             foreach (var c in _cultures)
                 if (c.StartsWith(n))
                     return c;
-
-
 
             // else 
             // It is not implemented
@@ -64,7 +57,6 @@ namespace Resources
         public static string GetDefaultCulture()
         {
             return _cultures[0]; // return Default culture
-
         }
 
         public static string GetCurrentCulture()
@@ -77,7 +69,6 @@ namespace Resources
             return GetNeutralCulture(Thread.CurrentThread.CurrentCulture.Name);
         }
 
-
         public static string GetNeutralCulture(string name)
         {
             if (name.Length < 2)
@@ -85,10 +76,5 @@ namespace Resources
 
             return name.Substring(0, 2); // Read first two chars only. E.g. "en", "es"
         }
-
-
-
-
-
     }
 }
